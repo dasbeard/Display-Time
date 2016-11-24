@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content=" ">
+  <title>Time</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <style>
+  h1{text-align: center;}
+  </style>
+  <script type="text/javascript" src="/Users/dasbeard/Documents/Resources/jquery-3.1.1.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+        // function getTime(){
+          var day = new Date();
+          var period = 'am';
+          var hour = day.getHours();
+          var min = day.getMinutes();
+          // var min = '50';
+          if (hour>12){
+            var hour = hour-12
+            period = 'pm';
+          }
+          if (min<10){
+            min='0'+ min;
+          }
+
+        var timeSTR = "It's ";
+
+        if (min==0){
+          timeSTR += hour + period + " on the dot!";
+          // console.log(timeSTR);
+        }
+        else if (min==5){
+          timeSTR += "5 after " + hour + period + "!";
+          // console.log(timeSTR);
+        }
+        else if (min==15){
+          timeSTR +="a quarter after " + hour + period + "!";
+          // console.log(timeSTR);
+        }
+        else if (min==30){
+          timeSTR += "half past " + hour + period + "!";
+          // console.log(timeSTR);
+        }
+        else if (min==45){
+          timeSTR +="a quarter to " + (hour+1) + period + "!";
+          // console.log(timeSTR);
+        }
+        else if (min>=50){
+          timeSTR +="almost " + (hour+1) + period + "!";
+          // console.log(timeSTR);
+        }
+        else (timeSTR += hour + ":" + min + period + "!")
+          // console.log(timeSTR);
+
+    $("#message").html( '<h1>'+timeSTR+'</h1>')
+          // console.log(hour, min, period);
+    })
+  </script>
+</head>
+<body>
+
+<div id="message">
+
+</div>
+<!-- <button>Click Me</button> -->
+
+
+</body>
+</html>
