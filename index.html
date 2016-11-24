@@ -23,6 +23,13 @@
             var hour = hour-12
             period = 'pm';
           }
+          if(period==='am'){
+            period=" in the morning";
+          }
+          else {
+            period=" in the evening";
+          }
+
           if (min<10){
             min='0'+ min;
           }
